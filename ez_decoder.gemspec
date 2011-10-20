@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Yves Senn"]
   s.email       = ["yves.senn@garaio.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
+  s.summary     = %q{Gem zum parsen der Koderzeile von roten und orangen Einzahlungsscheinen}
   s.description = %q{TODO: Write a gem description}
 
   s.rubyforge_project = "ez_decoder"
@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
 end

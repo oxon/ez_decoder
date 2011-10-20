@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["yves.senn@garaio.com"]
   s.homepage    = ""
   s.summary     = %q{Gem zum parsen der Koderzeile von roten und orangen Einzahlungsscheinen}
-  s.description = %q{TODO: Write a gem description}
+  s.description = %q{Das Gem extrahiert die Informationen aus den Codierzeilen der schweizerischen Einzahlungsscheine. Es werden sowohl rote wie auch orange Einzahlungsscheine erkannt. }
 
   s.rubyforge_project = "ez_decoder"
 

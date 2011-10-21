@@ -7,6 +7,10 @@ module EzDecoder
       @strategy = @strategy_class.new(kodierzeile)
     end
 
+    def art
+      :einzahlungsschein_orange
+    end
+
     def detect_strategy
       if legacy_esr?
         Teilnehmernummer5Stellig

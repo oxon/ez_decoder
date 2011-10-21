@@ -9,6 +9,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
     context "ESR (mit vorgedruckter Betragsangabe)" do
       let(:kodierzeile) { '<050001000012035> 241170032660178+ 10304>' }
 
+      its(:art) { should == :einzahlungsschein_orange }
       its(:belegartcode) { should == '01' }
       its(:betrag) { should == BigDecimal.new('120.35') }
       its(:referenz_nummer) { should == '241170032660178' }
@@ -18,6 +19,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
     context "ESR+ (ohne vorgedruckte Betragsangabe)" do
       let(:kodierzeile) { '110112111111000+ 10304>' }
 
+      its(:art) { should == :einzahlungsschein_orange }
       its(:belegartcode) { should be_nil }
       its(:betrag) { should be_nil }
       its(:referenz_nummer) { should == '110112111111000' }
@@ -33,6 +35,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
         it { should be_esr }
         it { should_not be_esr_plus }
 
+        its(:art) { should == :einzahlungsschein_orange }
         its(:belegartcode) { should == '01' }
         its(:betrag) { should == BigDecimal.new('3949.75') }
         its(:referenz_nummer) { should == '3139471430009018' }
@@ -45,6 +48,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
         it { should_not be_esr }
         it { should be_esr_plus }
 
+        its(:art) { should == :einzahlungsschein_orange }
         its(:belegartcode) { should == '04' }
         its(:betrag) { should == nil }
         its(:referenz_nummer) { should == '8257144175289632' }
@@ -59,6 +63,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
         it { should be_esr }
         it { should_not be_esr_plus }
 
+        its(:art) { should == :einzahlungsschein_orange }
         its(:belegartcode) { should == '01' }
         its(:betrag) { should == BigDecimal.new('132.45') }
         its(:referenz_nummer) { should == '000003371215982190000781348' }
@@ -71,6 +76,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
         it { should_not be_esr }
         it { should be_esr_plus }
 
+        its(:art) { should == :einzahlungsschein_orange }
         its(:belegartcode) { should == '04' }
         its(:betrag) { should == nil }
         its(:referenz_nummer) { should == '000003371215982190000781348' }

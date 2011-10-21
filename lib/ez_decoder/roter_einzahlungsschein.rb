@@ -5,6 +5,10 @@ module EzDecoder
       @kodierzeile = kodierzeile
     end
 
+    def art
+      :einzahlungsschein_rot
+    end
+
     def konto_nummer
       if @kodierzeile =~ /(\d+)(?:\+|>)/
         $~[1]

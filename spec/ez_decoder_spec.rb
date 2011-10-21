@@ -24,6 +24,16 @@ describe EzDecoder do
       einzahlungsschein = EzDecoder.decode('042>000003371215982190000781348+ 010001628')
       einzahlungsschein.should be_kind_of(EzDecoder::OrangerEinzahlungsschein)
     end
+
+    it "Erkennt alte orange Einzahlungsscheine für ESR Zahlungen" do
+      einzahlungsschein = EzDecoder.decode('<060001000002465> 130245413022098+ 10290>')
+      einzahlungsschein.should be_kind_of(EzDecoder::OrangerEinzahlungsschein)
+    end
+
+    it "Erkennt alte orange Einzahlungsscheine für ESR+ Zahlungen" do
+      einzahlungsschein = EzDecoder.decode('110112111111000+ 10304>')
+      einzahlungsschein.should be_kind_of(EzDecoder::OrangerEinzahlungsschein)
+    end
   end
 
 end

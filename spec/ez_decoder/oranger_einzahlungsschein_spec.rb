@@ -30,7 +30,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
   context "9-stelliger Teilnehmer-Nr." do
     context "16-stellige Referenznummer" do
       context "ESR (mit vorgedruckter Betragsangabe)" do
-        let(:kodierzeile) { '0100003949754>3139471430009018+ 010001628' }
+        let(:kodierzeile) { '0100003949754>3139471430009018+ 010001628>' }
 
         it { should be_esr }
         it { should_not be_esr_plus }
@@ -43,7 +43,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
       end
 
       context "ESR+ (ohne vorgedruckte Betragsangabe)" do
-        let(:kodierzeile) { '042>8257144175289632+ 010001628' }
+        let(:kodierzeile) { '042>8257144175289632+ 010001628>' }
 
         it { should_not be_esr }
         it { should be_esr_plus }
@@ -58,7 +58,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
 
     context "27-stellige Referenznummer" do
       context "ESR (mit vorgedruckter Betragsangabe)" do
-        let(:kodierzeile) { '0100000132451>000003371215982190000781348+ 010001628' }
+        let(:kodierzeile) { '0100000132451>000003371215982190000781348+ 010001628>' }
 
         it { should be_esr }
         it { should_not be_esr_plus }
@@ -71,7 +71,7 @@ describe EzDecoder::OrangerEinzahlungsschein do
       end
 
       context "ESR+ (ohne vorgedruckte Betragsangabe)" do
-        let(:kodierzeile) { '042>000003371215982190000781348+ 010001628' }
+        let(:kodierzeile) { '042>000003371215982190000781348+ 010001628>' }
 
         it { should_not be_esr }
         it { should be_esr_plus }

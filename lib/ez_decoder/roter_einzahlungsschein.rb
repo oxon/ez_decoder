@@ -15,10 +15,15 @@ module EzDecoder
       end
     end
 
-    def bank_clearing
+    def bankenclearing
       if @kodierzeile =~ /\+\s(\d+)>/
         $~[1]
       end
+    end
+
+    def bankenclearing_nummer
+      return nil unless bankenclearing
+      bankenclearing[2, 5]
     end
   end
 end

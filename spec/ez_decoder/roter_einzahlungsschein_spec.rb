@@ -10,7 +10,8 @@ describe EzDecoder::RoterEinzahlungsschein do
 
     its(:art) { should == :einzahlungsschein_rot }
     its(:konto_nummer) { should == '000000000000000000234512342' }
-    its(:bank_clearing) { should == '070888845' }
+    its(:bankenclearing) { should == '070888845' }
+    its(:bankenclearing_nummer) { should == '08888' }
   end
 
   context "Bei Postzahlungen" do
@@ -18,7 +19,8 @@ describe EzDecoder::RoterEinzahlungsschein do
 
     its(:art) { should == :einzahlungsschein_rot }
     its(:konto_nummer) { should == '250090342' }
-    its(:bank_clearing) { should be_nil }
+    its(:bankenclearing) { should be_nil }
+    its(:bankenclearing_nummer) { should be_nil }
   end
 
 end
